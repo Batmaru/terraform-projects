@@ -1,0 +1,1 @@
+qui cerco di imparare come strutturare al meglio una directory terraform

@@ -1,0 +1,1 @@
+in questo progetto ho creato un resource group, ed uno storage account

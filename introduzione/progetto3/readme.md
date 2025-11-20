@@ -1,0 +1,1 @@
+in questo progetto ho visto l'uso delle variabili e di come fare un output per vedere delle informazioni nel terminale dopo il run con "terraform init"
