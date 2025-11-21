@@ -7,29 +7,37 @@ resource "azurerm_network_security_group" "nsg1" {
   resource_group_name = var.resource_group1_name
 
   security_rule {
-    name                       = "AllowRDP"
+    name                       = "AllowInbound"
     priority                   = 100
     direction                  = "Inbound"
     access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = "3389"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
-
-  security_rule {
-    name                       = "AllowICMP"
-    priority                   = 200
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Icmp"
+    protocol                   = "*"
     source_port_range          = "*"
     destination_port_range     = "*"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
+    # Solo la subnet della VNet2
+    source_address_prefix      = azurerm_subnet.subnet1-vnet2.address_prefixes[0]
+    destination_address_prefix = azurerm_subnet.subnet1-vnet1.address_prefixes[0]
   }
+
+
+  # permettere solo traffico https in uscita
+  security_rule {
+  name                       = "AllowHTTPSOutbound"
+  priority                   = 100
+  direction                  = "Outbound"
+  access                     = "Allow"
+  protocol                   = "Tcp"
+  source_port_range          = "*"
+  destination_port_range     = "443"
+  destination_address_prefix = "*"
+  source_address_prefix      = "*"
 }
+
+}
+
+
+
+
 
 
 # nsg per vnet2
@@ -40,26 +48,28 @@ resource "azurerm_network_security_group" "nsg2" {
   resource_group_name = var.resource_group2_name
 
   security_rule {
-    name                       = "AllowRDP"
+    name                       = "AllowInbound"
     priority                   = 100
     direction                  = "Inbound"
     access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = "3389"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
-
-  security_rule {
-    name                       = "AllowICMP"
-    priority                   = 200
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Icmp"
+    protocol                   = "*"
     source_port_range          = "*"
     destination_port_range     = "*"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
+    source_address_prefix      = azurerm_subnet.subnet1-vnet1.address_prefixes[0]
+    destination_address_prefix = azurerm_subnet.subnet1-vnet2.address_prefixes[0]
   }
+
+  # permettere solo traffico https in uscita
+  security_rule {
+  name                       = "AllowHTTPSOutbound"
+  priority                   = 100
+  direction                  = "Outbound"
+  access                     = "Allow"
+  protocol                   = "Tcp"
+  source_port_range          = "*"
+  destination_port_range     = "443"
+  destination_address_prefix = "*"
+  source_address_prefix      = "*"
+}
+
 }
