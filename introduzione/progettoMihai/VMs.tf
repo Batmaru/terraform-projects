@@ -16,11 +16,12 @@ resource "azurerm_windows_virtual_machine" "vm1_rg1" {
   }
 
   source_image_reference {
-  publisher = "MicrosoftWindowsDesktop"
-  offer     = "windows-11"
-  sku       = "win11-22h2-pro"  
+  publisher = "MicrosoftWindowsServer"
+  offer     = "WindowsServer"
+  sku       = "2022-Datacenter"
   version   = "latest"
 }
+
 
 }
 
@@ -44,10 +45,10 @@ resource "azurerm_windows_virtual_machine" "vm1_rg2" {
     storage_account_type = "Standard_LRS"
   }
 
-  source_image_reference {
-  publisher = "MicrosoftWindowsDesktop"
-  offer     = "windows-11"
-  sku       = "win11-22h2-pro"  
+source_image_reference {
+  publisher = "MicrosoftWindowsServer"
+  offer     = "WindowsServer"
+  sku       = "2022-Datacenter"
   version   = "latest"
 }
 
