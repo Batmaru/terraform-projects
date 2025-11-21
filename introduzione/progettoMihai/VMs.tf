@@ -8,9 +8,7 @@ resource "azurerm_windows_virtual_machine" "vm1_rg1" {
   size                = "Standard_B1s" 
   admin_username      = var.admin_username_vm1_rg1
   admin_password      = var.admin_password_vm1_rg1
-  network_interface_ids = [
-    azurerm_network_interface.nic1.id
-  ]
+  network_interface_ids = [module.network.nic_vnet1_vm1_id]  
 
   os_disk {
     caching              = "ReadWrite"
@@ -38,7 +36,7 @@ resource "azurerm_windows_virtual_machine" "vm1_rg2" {
   admin_username      = var.admin_username_vm1_rg2
   admin_password      = var.admin_password_vm1_rg2
   network_interface_ids = [
-    azurerm_network_interface.nic2.id
+    module.network.nic_vnet2_vm1_id
   ]
 
   os_disk {

@@ -3,8 +3,7 @@
 resource "azurerm_network_interface" "nic_vnet1_vm1" {
   name                = "nic-vnet1-vm1"
   location            = var.location
-  resource_group_name = azurerm_resource_group.mio_gruppo_1.name
-
+  resource_group_name = var.resource_group1_name
   ip_configuration {
     name                          = "ipconfig1"
     subnet_id                     = azurerm_subnet.subnet1-vnet1.id   
@@ -15,14 +14,14 @@ resource "azurerm_network_interface" "nic_vnet1_vm1" {
 }
 
 # nic per vm2
-resource "azurerm_network_interface" "nic_vnet2_vm2" {
+resource "azurerm_network_interface" "nic_vnet2_vm1" {
   name                = "nic-vnet2-vm2"
   location            = var.location
-  resource_group_name = azurerm_resource_group.mio_gruppo_2.name
+  resource_group_name = var.resource_group2_name
 
   ip_configuration {
     name                          = "ipconfig2"
-    subnet_id                     = azurerm_subnet.subnet2-vnet2.id   
+    subnet_id                     = azurerm_subnet.subnet1-vnet2.id   
     private_ip_address_allocation  = "Dynamic"                  
    
   }

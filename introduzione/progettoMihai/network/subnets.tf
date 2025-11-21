@@ -2,7 +2,7 @@
 
 resource "azurerm_subnet" "subnet1-vnet1" {
   name                 = "subnet-vnet1"
-  resource_group_name  = azurerm_resource_group.mio_gruppo_1.name
+  resource_group_name  = var.resource_group1_name
   virtual_network_name = azurerm_virtual_network.vnet1.name
   address_prefixes     = ["10.0.0.0/24"]
 }
@@ -17,9 +17,9 @@ resource "azurerm_subnet_network_security_group_association" "subnet1_nsg1" {
 
 
 # subnet per vnet2
-resource "azurerm_subnet" "subnet2-vnet2" {
+resource "azurerm_subnet" "subnet1-vnet2" {
   name                 = "subnet-vnet2"
-  resource_group_name  = azurerm_resource_group.mio_gruppo_2.name
+  resource_group_name  = var.resource_group2_name
   virtual_network_name = azurerm_virtual_network.vnet2.name
   address_prefixes     = ["10.1.1.0/24"]
 }

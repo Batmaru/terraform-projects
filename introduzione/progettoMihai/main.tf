@@ -12,3 +12,9 @@ terraform {
 
 
 
+module "network" {
+  source              = "./network"
+  location            = var.location
+  resource_group1_name = azurerm_resource_group.mio_gruppo_1.name
+  resource_group2_name = azurerm_resource_group.mio_gruppo_2.name
+}
