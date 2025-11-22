@@ -19,3 +19,4 @@ variable "resource_group2_name" {
 }
 
 
+
