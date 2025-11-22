@@ -1,0 +1,380 @@
+{
+  "version": 4,
+  "terraform_version": "1.13.5",
+  "serial": 32,
+  "lineage": "a4c03fe7-3b96-b17a-f9e7-0359da191a8e",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "mio_gruppo_1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_1",
+            "location": "italynorth",
+            "managed_by": "",
+            "name": "mio_gruppo_1",
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo1NDAwMDAwMDAwMDAwLCJkZWxldGUiOjU0MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjo1NDAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "mio_gruppo_2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_2",
+            "location": "italynorth",
+            "managed_by": "",
+            "name": "mio_gruppo_2",
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo1NDAwMDAwMDAwMDAwLCJkZWxldGUiOjU0MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjo1NDAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "azurerm_network_interface",
+      "name": "nic_vnet1_vm1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "accelerated_networking_enabled": false,
+            "applied_dns_servers": [],
+            "auxiliary_mode": "",
+            "auxiliary_sku": "",
+            "dns_servers": [],
+            "edge_zone": "",
+            "id": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_1/providers/Microsoft.Network/networkInterfaces/nic-vnet1-vm1",
+            "internal_dns_name_label": "",
+            "internal_domain_name_suffix": "",
+            "ip_configuration": [
+              {
+                "gateway_load_balancer_frontend_ip_configuration_id": "",
+                "name": "ipconfig1",
+                "primary": true,
+                "private_ip_address": "10.0.0.4",
+                "private_ip_address_allocation": "Dynamic",
+                "private_ip_address_version": "IPv4",
+                "public_ip_address_id": "",
+                "subnet_id": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_1/providers/Microsoft.Network/virtualNetworks/vnet-1/subnets/subnet-vnet1"
+              }
+            ],
+            "ip_forwarding_enabled": false,
+            "location": "italynorth",
+            "mac_address": "7C-1E-52-1E-98-87",
+            "name": "nic-vnet1-vm1",
+            "private_ip_address": "10.0.0.4",
+            "private_ip_addresses": [
+              "10.0.0.4"
+            ],
+            "resource_group_name": "mio_gruppo_1",
+            "tags": {},
+            "timeouts": null,
+            "virtual_machine_id": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_1/providers/Microsoft.Compute/virtualMachines/vm1-rg1"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "nic-vnet1-vm1",
+            "resource_group_name": "mio_gruppo_1",
+            "subscription_id": "3e798b21-96fa-42e9-a7a4-51186c78b650"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.mio_gruppo_1",
+            "module.network.azurerm_subnet.subnet1-vnet1",
+            "module.network.azurerm_virtual_network.vnet1"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "azurerm_network_interface",
+      "name": "nic_vnet2_vm1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "accelerated_networking_enabled": false,
+            "applied_dns_servers": [],
+            "auxiliary_mode": "",
+            "auxiliary_sku": "",
+            "dns_servers": [],
+            "edge_zone": "",
+            "id": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_2/providers/Microsoft.Network/networkInterfaces/nic-vnet2-vm2",
+            "internal_dns_name_label": "",
+            "internal_domain_name_suffix": "",
+            "ip_configuration": [
+              {
+                "gateway_load_balancer_frontend_ip_configuration_id": "",
+                "name": "ipconfig2",
+                "primary": true,
+                "private_ip_address": "10.1.1.4",
+                "private_ip_address_allocation": "Dynamic",
+                "private_ip_address_version": "IPv4",
+                "public_ip_address_id": "",
+                "subnet_id": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_2/providers/Microsoft.Network/virtualNetworks/vnet-2/subnets/subnet-vnet2"
+              }
+            ],
+            "ip_forwarding_enabled": false,
+            "location": "italynorth",
+            "mac_address": "7C-1E-52-1E-98-B6",
+            "name": "nic-vnet2-vm2",
+            "private_ip_address": "10.1.1.4",
+            "private_ip_addresses": [
+              "10.1.1.4"
+            ],
+            "resource_group_name": "mio_gruppo_2",
+            "tags": {},
+            "timeouts": null,
+            "virtual_machine_id": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_2/providers/Microsoft.Compute/virtualMachines/vm1-rg2"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "nic-vnet2-vm2",
+            "resource_group_name": "mio_gruppo_2",
+            "subscription_id": "3e798b21-96fa-42e9-a7a4-51186c78b650"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.mio_gruppo_2",
+            "module.network.azurerm_subnet.subnet1-vnet2",
+            "module.network.azurerm_virtual_network.vnet2"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "subnet1-vnet1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_prefixes": [
+              "10.0.0.0/24"
+            ],
+            "default_outbound_access_enabled": true,
+            "delegation": [],
+            "id": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_1/providers/Microsoft.Network/virtualNetworks/vnet-1/subnets/subnet-vnet1",
+            "ip_address_pool": [],
+            "name": "subnet-vnet1",
+            "private_endpoint_network_policies": "Disabled",
+            "private_link_service_network_policies_enabled": true,
+            "resource_group_name": "mio_gruppo_1",
+            "service_endpoint_policy_ids": [],
+            "service_endpoints": [],
+            "sharing_scope": "",
+            "timeouts": null,
+            "virtual_network_name": "vnet-1"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "subnet-vnet1",
+            "resource_group_name": "mio_gruppo_1",
+            "subscription_id": "3e798b21-96fa-42e9-a7a4-51186c78b650",
+            "virtual_network_name": "vnet-1"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.mio_gruppo_1",
+            "module.network.azurerm_virtual_network.vnet1"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "subnet1-vnet2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_prefixes": [
+              "10.1.1.0/24"
+            ],
+            "default_outbound_access_enabled": true,
+            "delegation": [],
+            "id": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_2/providers/Microsoft.Network/virtualNetworks/vnet-2/subnets/subnet-vnet2",
+            "ip_address_pool": [],
+            "name": "subnet-vnet2",
+            "private_endpoint_network_policies": "Disabled",
+            "private_link_service_network_policies_enabled": true,
+            "resource_group_name": "mio_gruppo_2",
+            "service_endpoint_policy_ids": [],
+            "service_endpoints": [],
+            "sharing_scope": "",
+            "timeouts": null,
+            "virtual_network_name": "vnet-2"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "subnet-vnet2",
+            "resource_group_name": "mio_gruppo_2",
+            "subscription_id": "3e798b21-96fa-42e9-a7a4-51186c78b650",
+            "virtual_network_name": "vnet-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.mio_gruppo_2",
+            "module.network.azurerm_virtual_network.vnet2"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "azurerm_virtual_network",
+      "name": "vnet1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_space": [
+              "10.0.0.0/16"
+            ],
+            "bgp_community": "",
+            "ddos_protection_plan": [],
+            "dns_servers": [],
+            "edge_zone": "",
+            "encryption": [],
+            "flow_timeout_in_minutes": 0,
+            "guid": "0df77020-f823-47e8-a4bc-c4dd5aec82f4",
+            "id": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_1/providers/Microsoft.Network/virtualNetworks/vnet-1",
+            "ip_address_pool": [],
+            "location": "italynorth",
+            "name": "vnet-1",
+            "private_endpoint_vnet_policies": "Disabled",
+            "resource_group_name": "mio_gruppo_1",
+            "subnet": [
+              {
+                "address_prefixes": [
+                  "10.0.0.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "id": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_1/providers/Microsoft.Network/virtualNetworks/vnet-1/subnets/subnet-vnet1",
+                "name": "subnet-vnet1",
+                "private_endpoint_network_policies": "Disabled",
+                "private_link_service_network_policies_enabled": true,
+                "route_table_id": "",
+                "security_group": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_1/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet1",
+                "service_endpoint_policy_ids": [],
+                "service_endpoints": []
+              }
+            ],
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "vnet-1",
+            "resource_group_name": "mio_gruppo_1",
+            "subscription_id": "3e798b21-96fa-42e9-a7a4-51186c78b650"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.mio_gruppo_1"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "azurerm_virtual_network",
+      "name": "vnet2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_space": [
+              "10.1.0.0/16"
+            ],
+            "bgp_community": "",
+            "ddos_protection_plan": [],
+            "dns_servers": [],
+            "edge_zone": "",
+            "encryption": [],
+            "flow_timeout_in_minutes": 0,
+            "guid": "fc209646-6344-4b09-b2f3-57dfb135fe52",
+            "id": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_2/providers/Microsoft.Network/virtualNetworks/vnet-2",
+            "ip_address_pool": [],
+            "location": "italynorth",
+            "name": "vnet-2",
+            "private_endpoint_vnet_policies": "Disabled",
+            "resource_group_name": "mio_gruppo_2",
+            "subnet": [
+              {
+                "address_prefixes": [
+                  "10.1.1.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "id": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_2/providers/Microsoft.Network/virtualNetworks/vnet-2/subnets/subnet-vnet2",
+                "name": "subnet-vnet2",
+                "private_endpoint_network_policies": "Disabled",
+                "private_link_service_network_policies_enabled": true,
+                "route_table_id": "",
+                "security_group": "/subscriptions/3e798b21-96fa-42e9-a7a4-51186c78b650/resourceGroups/mio_gruppo_2/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet2",
+                "service_endpoint_policy_ids": [],
+                "service_endpoints": []
+              }
+            ],
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "vnet-2",
+            "resource_group_name": "mio_gruppo_2",
+            "subscription_id": "3e798b21-96fa-42e9-a7a4-51186c78b650"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.mio_gruppo_2"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

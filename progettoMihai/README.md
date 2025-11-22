@@ -1,0 +1,1 @@
+In questa catella sono presenti gli esercizi che mi sono stati assegnati dal mio diretto superiore Mihai
