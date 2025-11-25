@@ -1,1 +1,1 @@
-in questo progetto ho capito come salvare il file tfstate su un blob container
+in questo progetto ho capito come salvare il file tfstate su un blob container 
