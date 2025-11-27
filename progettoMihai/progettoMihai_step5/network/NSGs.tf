@@ -41,7 +41,7 @@ security_rule {
   protocol                   = "Tcp"
   source_port_range          = "*"
   destination_port_range     = "22"
-  source_address_prefix      = azurerm_public_ip.lb_public_ip.ip_address
+  source_address_prefix      = "0.0.0.0/0"
   destination_address_prefix = "*"
 }
 
@@ -92,7 +92,7 @@ security_rule {
   protocol                   = "Tcp"
   source_port_range          = "*"
   destination_port_range     = "22"
-  source_address_prefix      = azurerm_public_ip.lb_public_ip.ip_address
+  source_address_prefix      = "0.0.0.0/0"
   destination_address_prefix = "*"
 }
 

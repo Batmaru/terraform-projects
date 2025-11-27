@@ -63,8 +63,13 @@ resource "azurerm_network_interface_nat_rule_association" "linux_ssh_assoc_nic_v
   nat_rule_id           = azurerm_lb_nat_rule.ssh_nat1.id
 }
 
-resource "azurerm_network_interface_nat_rule_association" "linux_ssh_assoc_nic_vnet2_vm1" {
-  network_interface_id  = azurerm_network_interface.nic_vnet2_vm1.id
-  ip_configuration_name = "ipconfig2"
-  nat_rule_id           = azurerm_lb_nat_rule.ssh_nat2.id
+# resource "azurerm_network_interface_nat_rule_association" "linux_ssh_assoc_nic_vnet2_vm1" {
+#   network_interface_id  = azurerm_network_interface.nic_vnet2_vm1.id
+#   ip_configuration_name = "ipconfig2"
+#   nat_rule_id           = azurerm_lb_nat_rule.ssh_nat2.id
+# }
+
+resource "azurerm_network_interface_security_group_association" "nic_vnet1_nsg" {
+  network_interface_id      = azurerm_network_interface.nic_vnet1_vm1.id
+  network_security_group_id = azurerm_network_security_group.nsg1.id
 }
