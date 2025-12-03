@@ -62,7 +62,7 @@ module "vm1_vnet1_rg1" {
 
 
 
-module "vm2_vne1_rg1" {
+module "vm2_vnet1_rg1" {
   source  = "Azure/avm-res-compute-virtualmachine/azurerm"
   version = "0.20.0"
   

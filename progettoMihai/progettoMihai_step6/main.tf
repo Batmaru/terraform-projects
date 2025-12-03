@@ -65,3 +65,19 @@ module "network" {
   resource_group2_id = module.resource_groups.resource_group2_id
   resource_group_log_analytics_id = module.resource_groups.resource_group_log_analytics_id
 } 
+
+
+
+#########################
+# module monitoring
+#######################
+module "monitoring" {
+  source = "./my_modules/monitoring"
+  storage_account_log_analytics_id = module.storage_accounts.storage_log_analytics_id
+  vm1_rg1_id = module.network.vm1_vnet1_id
+  vm2_rg1_id = module.network.vm2_vnet1_id
+  resource_group_log_analytics_id = module.resource_groups.resource_group_log_analytics_id
+  resource_group_log_analytics_name = module.resource_groups.resource_group_log_analytics_name
+  location = var.location
+  mio_gruppo1_name = module.resource_groups.resource_group1_name
+}
