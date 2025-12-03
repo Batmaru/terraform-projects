@@ -10,8 +10,8 @@
 
 resource "azurerm_user_assigned_identity" "UAI" {
   name                = "uai"
-  resource_group_name = azurerm_resource_group.gruppo_log_analitics.name
-  location            = azurerm_resource_group.gruppo_log_analitics.location
+  resource_group_name = var.resource_group_log_analytics_name
+  location            = var.location
 }
 
 # Log Analytics Solution WindowsEventForwarding:
@@ -38,8 +38,8 @@ resource "azurerm_user_assigned_identity" "UAI" {
 
 resource "azurerm_eventhub_namespace" "eventhub_namespace1" {
   name                = "eventhubnamespace12345876387fijdhuf"
-  location            = azurerm_resource_group.gruppo_log_analitics.location
-  resource_group_name = azurerm_resource_group.gruppo_log_analitics.name
+  location            = var.location
+  resource_group_name = var.resource_group_log_analytics_name
   sku                 = "Standard"
   capacity            = 1
 }
@@ -56,7 +56,7 @@ resource "azurerm_eventhub" "eventhub1" {
 # container per lo storage account del log analitycs
 resource "azurerm_storage_container" "container1" {
   name                  = "containerlog"
-  storage_account_id  = azurerm_storage_account.storage_log_analitics.id
+  storage_account_id  = var.storage_account_log_analytics_name.id
   container_access_type = "private"
 }
 
@@ -69,8 +69,8 @@ resource "azurerm_storage_container" "container1" {
 # Ti permette di centralizzare la raccolta dei dati e applicare regole di sicurezza, routing e trasformazioni.
 resource "azurerm_monitor_data_collection_endpoint" "DCE1" {
   name                = "DCE"
-  resource_group_name = azurerm_resource_group.gruppo_log_analitics.name
-  location            = azurerm_resource_group.gruppo_log_analitics.location
+  resource_group_name = var.resource_group_log_analytics_name
+  location            = var.location
 
   lifecycle {
     create_before_destroy = true
@@ -79,8 +79,8 @@ resource "azurerm_monitor_data_collection_endpoint" "DCE1" {
 
 resource "azurerm_monitor_data_collection_rule" "DCR1" {
   name                        = "DCR"
-  resource_group_name = azurerm_resource_group.gruppo_log_analitics.name
-  location            = azurerm_resource_group.gruppo_log_analitics.location
+  resource_group_name = var.resource_group_log_analytics_name
+  location            = var.location
   data_collection_endpoint_id = azurerm_monitor_data_collection_endpoint.DCE1.id
 
   destinations {
@@ -97,7 +97,7 @@ resource "azurerm_monitor_data_collection_rule" "DCR1" {
     }
 
     storage_blob {
-      storage_account_id = azurerm_storage_account.storage_log_analitics.id
+      storage_account_id = var.storage_account_log_analytics_id
       container_name     = azurerm_storage_container.container1.name
       name               = "example-destination-storage"
     }
@@ -214,7 +214,7 @@ resource "azurerm_monitor_data_collection_rule" "DCR1" {
  # Associazione DCR alla VM1 Linux
 resource "azurerm_monitor_data_collection_rule_association" "dcra1" {
   name                    = "dcra1"
-  target_resource_id      = azurerm_linux_virtual_machine.vm1_rg1.id
+  target_resource_id      = var.vm1_rg1_id
   data_collection_rule_id = azurerm_monitor_data_collection_rule.DCR1.id
   description             = "associazione DCR a VM Linux"
 }
@@ -229,7 +229,7 @@ resource "azurerm_monitor_data_collection_rule_association" "dcra1" {
 # Associazione DCR alla VM2 Linux 
 resource "azurerm_monitor_data_collection_rule_association" "dcra2" {
   name                    = "dcra2"
-  target_resource_id      = azurerm_linux_virtual_machine.vm1_rg2.id
+  target_resource_id      = var.vm2_rg1_id
   data_collection_rule_id = azurerm_monitor_data_collection_rule.DCR1.id
   description             = "associazione DCR a VM Linux"
 }

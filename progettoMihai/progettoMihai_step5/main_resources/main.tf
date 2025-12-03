@@ -10,6 +10,10 @@ terraform {
 }
 
 
+resource "azurerm_resource_group" "gruppo_log_analitics" {
+  name     = "gruppo_log_analitics"
+  location = "italynorth"
+}
 
 
 module "network" {
@@ -26,5 +30,15 @@ module "network" {
 
   admin_username_vm1_rg2 = var.admin_username_vm1_rg2
   admin_password_vm1_rg2 = var.admin_password_vm1_rg2
+}
+
+module "monitoring" {
+  source               = "../monitoring"
+  location             = var.location
+  resource_group_log_analytics_name = azurerm_resource_group.gruppo_log_analitics.name 
+  resource_group_log_analytics_id = azurerm_resource_group.gruppo_log_analitics.id
+  storage_account_log_analytics_id = azurerm_storage_account.storage_log_analitics.id
+  vm1_rg1_id           = module.network.vnet1_vm1_id
+  vm2_rg1_id           = module.network.vnet1_vm2_id
 }
 

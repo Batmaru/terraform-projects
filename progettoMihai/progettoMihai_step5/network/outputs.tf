@@ -48,3 +48,10 @@ output "lb_public_ip_address" {
 }
 
 
+# output per gli ID delle VM
+output "vnet1_vm1_id"{
+  value = azurerm_linux_virtual_machine.vm1_rg1.id
+}
+output "vnet1_vm2_id"{
+  value = azurerm_linux_virtual_machine.vm2_rg1.id
+}
