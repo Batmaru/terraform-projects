@@ -1,0 +1,1 @@
+In questo step6 mi sono impegnato a riscrivrere tutto lo step precedente cercando di usare una buona suddivisione in sottocartelle standard e a comprendere e usare i modlu AVM (Azure Verified Modules)
