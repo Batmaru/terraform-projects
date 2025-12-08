@@ -29,7 +29,7 @@ module "subnet1_vnet2" {
 }
   # associa NSG se il modulo lo supporta
  
-# Associazione NSG VNet2 → subnet2
+# Associazione NSG VNet2 con subnet2
 resource "azurerm_subnet_network_security_group_association" "subnet1_vnet1_nsg2_association" {
   subnet_id                 = module.subnet1_vnet2.resource.id
   network_security_group_id = module.nsg_vnet1_rg2.resource.id
@@ -50,3 +50,15 @@ resource "azurerm_subnet_network_security_group_association" "subnet_loganalytic
   subnet_id                 = module.subnet_log_analytics.resource.id
   network_security_group_id = module.nsg_log_analytics.resource.id
 }
+
+
+module "subnet_bastion_vnet1" {
+  source  = "Azure/avm-res-network-virtualnetwork/azurerm//modules/subnet"
+  version = "0.16.0"
+
+  name                 = "AzureBastionSubnet"
+  address_prefixes     = ["10.0.2.0/27"]  # deve essere almeno /27
+  
+  parent_id  = module.vnet1_rg1.resource.id
+}
+

@@ -47,6 +47,14 @@ module "storage_accounts" {
   resource_group1_id = module.resource_groups.resource_group1_id
   resource_group2_id = module.resource_groups.resource_group2_id
   resource_group_log_analytics_id = module.resource_groups.resource_group_log_analytics_id
+  subnet1_vnet1_id = module.network.subnet1_vnet1_id
+  public_ip_bastion = module.network.public_ip_bastion
+  vnet1_rg1_id = module.network.vnet1_rg1_id
+  subnet1_vnet2_id = module.network.subnet1_vnet2_id
+  subnet_log_analytics_id = module.network.subnet_log_analytics_id
+  vnet_log_analytics_id = module.network.vnet_log_analytics_id 
+  vnet1_rg2_id = module.network.vnet1_rg2_id 
+
 } 
 
 
@@ -67,6 +75,8 @@ module "network" {
   resource_group1_id = module.resource_groups.resource_group1_id
   resource_group2_id = module.resource_groups.resource_group2_id
   resource_group_log_analytics_id = module.resource_groups.resource_group_log_analytics_id
+  
+
 } 
 
 

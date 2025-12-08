@@ -29,3 +29,6 @@ module "vnet_log_analytics" {
   parent_id = var.resource_group_log_analytics_id
   address_space = ["10.2.0.0/16"]
 }
+
+
+

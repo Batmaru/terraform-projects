@@ -31,3 +31,32 @@ variable "resource_group_log_analytics_id" {
     description = "Id del gruppo di risorse log analytics"
     type = string
 }
+
+
+
+
+variable "public_ip_bastion"{
+    type = string
+}
+
+variable "subnet1_vnet1_id"{
+    type =string
+}
+
+variable "vnet1_rg1_id"{
+    type = string
+}
+variable "vnet1_rg2_id"{
+    type=string
+}
+variable "subnet1_vnet2_id"{
+    type = string
+}
+
+variable "subnet_log_analytics_id"{
+    type= string
+}
+
+variable "vnet_log_analytics_id"{
+    type = string
+}
