@@ -79,6 +79,3 @@ resource "azurerm_network_interface_nat_rule_association" "vm2_ssh_nat" {
   ip_configuration_name = "ipconfig2"
   nat_rule_id           = azurerm_lb_nat_rule.ssh_nat_vm2.id
 }
-
-
-# un prossimo step potrebbe essere : servire una pagina https, quindi implementare un load balancing rule
