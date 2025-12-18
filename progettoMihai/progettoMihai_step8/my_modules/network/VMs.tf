@@ -173,6 +173,8 @@ module "vm2_vnet1_rg1" {
     templatefile("${path.module}/cloud-init-setup.yaml", {
      desired_username = "localadmin2"
       ssh_public_key   = tls_private_key.ssh_key_vm2.public_key_openssh
+
+    
     })
   )
 
